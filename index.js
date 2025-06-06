@@ -5,7 +5,9 @@ const app = express();
 const port = 3000;
 
 //no data base 
-var posts = [];
+var posts = [{postId: 1, title: "First Post", content: "This is the content of the first post", createdAt: new Date()},
+             {postId: 2, title: "Second Post", content: "This is the content of the second post", createdAt: new Date()},
+             {postId: 3, title: "Third Post", content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", createdAt: new Date()}];
 
 // Serve static files from the "public" directory
 app.use(express.static("public"));
