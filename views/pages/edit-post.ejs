@@ -2,14 +2,15 @@
 
     <main class="create-post-container">
         <div class="create-post-card">
-            <h2><i class="fas fa-pen-fancy"></i> Create New Post</h2>
-            <form action="/create-new-post" method="POST" class="create-post-form">
+            <h2><i class="fas fa-edit"></i> Edit Post</h2>
+            <form action="/update-post/<%= post.id %>?_method=PUT" method="POST" class="create-post-form">
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input 
                         type="text" 
                         id="title" 
                         name="title" 
+                        value="<%= post.title %>"
                         placeholder="Enter your post title"
                         maxlength="30"
                         required
@@ -23,19 +24,19 @@
                         name="content" 
                         placeholder="Write your post content here..."
                         required
-                    ></textarea>
+                    ><%= post.content %></textarea>
                 </div>
 
                 <div class="form-buttons">
-                    <button type="button" class="cancel-btn" onclick="window.location.href='/'">
+                    <button type="button" class="cancel-btn" onclick="window.location.href='/post/<%= post.id %>'">
                         <i class="fas fa-times"></i> Cancel
                     </button>
                     <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> Publish Post
+                        <i class="fas fa-save"></i> Save Changes
                     </button>
                 </div>
             </form>
         </div>
     </main>
 
-    <%- include('../partials/footer.ejs') %>
+<%- include('../partials/footer.ejs') %>
